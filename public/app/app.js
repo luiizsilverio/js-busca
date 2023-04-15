@@ -2,10 +2,12 @@ import { notasService as service } from "./nota/service.js";
 import { takeUntil, debounce } from "./utils/operators.js";
 import { timeoutPromise, retry } from "./utils/promise-helpers.js";
 import { EventEmitter } from './utils/event-emitter.js';
+import { Maybe } from "./utils/maybe.js";
 import "./utils/array-helpers.js";
 
-const ehDivisivel = (divisor, numero) => !(numero % divisor);
-const ehDivisivelPorDois = ehDivisivel.bind(null, 2);
+// const ehDivisivel = (divisor, numero) => !(numero % divisor);
+// const ehDivisivelPorDois = ehDivisivel.bind(null, 2);
+
 
 const action = debounce(500, 
     takeUntil(3, () =>
