@@ -15,7 +15,6 @@ export const notasService = {
     return await fetch(API)
       .then(handleStatus)
       .catch(err => {
-        console.log(err);
         return Promise.reject('Não foi possível obter as notas');
       })
   },
